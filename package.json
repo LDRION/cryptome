@@ -1,0 +1,49 @@
+{
+  "name": "cryptome",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "recon": "node --env-file-if-exists=.env src/recon.ts",
+    "test": "node --test \"test/**/*.test.ts\"",
+    "typecheck": "tsc",
+    "compare": "node src/compare.ts",
+    "payments": "node --env-file-if-exists=.env src/payments.ts",
+    "gate:backtest": "node src/gate-backtest.ts",
+    "screen": "node src/screen.ts",
+    "paper:universe": "node --env-file-if-exists=.env src/paper/universe.ts",
+    "paper:replay": "node --env-file-if-exists=.env src/paper/run.ts --mode replay",
+    "paper:live": "node --env-file-if-exists=.env src/paper/run.ts --mode live",
+    "paper:report": "node src/paper/report.ts",
+    "paper:backrun": "node --env-file-if-exists=.env src/paper/backrun-report.ts",
+    "paper:verify": "node --env-file-if-exists=.env src/paper/verify.ts",
+    "paper:sweep": "node --env-file-if-exists=.env src/paper/sweep.ts",
+    "liquidations": "node --env-file-if-exists=.env src/liquidations.ts",
+    "solana": "node --env-file-if-exists=.env src/solana-recon.ts",
+    "contract:build": "node contracts/compile.mjs",
+    "contract:deploy": "node --env-file-if-exists=.env src/sender/deploy.ts",
+    "sender:new-key": "node src/sender/new-key.ts",
+    "sender:empty": "node --env-file-if-exists=.env src/sender/empty-sender.ts",
+    "sender:probe": "node --env-file-if-exists=.env src/sender/probe.ts",
+    "sender:check": "node --env-file-if-exists=.env src/sender/check-nodes.ts",
+    "sender:score": "node --env-file-if-exists=.env src/sender/scoreboard.ts",
+    "sender:report": "node --env-file-if-exists=.env src/sender/report.ts",
+    "sim:month": "node --env-file-if-exists=.env src/sim/month.ts",
+    "radar": "node --env-file-if-exists=.env src/radar/run.ts",
+    "payouts": "node --env-file-if-exists=.env src/payouts/run.ts",
+    "contract:check": "node --env-file-if-exists=.env src/paper/contract-check.ts",
+    "niche:pie": "node --env-file-if-exists=.env scripts/niche-pie.mjs"
+  },
+  "dependencies": {
+    "undici": "7.25.0",
+    "viem": "^2.57.14"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "solc": "0.8.30",
+    "typescript": "^7.0.2"
+  }
+}
